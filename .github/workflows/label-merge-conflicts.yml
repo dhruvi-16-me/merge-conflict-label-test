@@ -1,0 +1,15 @@
+name: Label merge conflicts
+
+on:
+  push:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: eps1lon/actions-label-merge-conflict@v3
+        with:
+          label: "PR: needs rebase"
+          token: ${{ secrets.GITHUB_TOKEN }}
