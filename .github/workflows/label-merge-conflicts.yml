@@ -18,3 +18,14 @@ jobs:
         with:
           dirtyLabel: "PR: needs rebase"
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          commentOnDirty: |
+            ⚠️ This pull request has merge conflicts.
+            
+            Please rebase your branch onto the latest `main` branch before review.
+            
+            Example:
+            ```
+            git fetch origin
+            git rebase origin/main
+            git push --force-with-lease
+            ```
